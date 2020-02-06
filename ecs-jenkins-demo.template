@@ -24,12 +24,12 @@
       "Description": "The VPC in which Jenkins should run.",
       "Type": "String"
     },
-    "AvailabilityZone1": {
-      "Description": "The first AZ in which Jenkins should run.",
+    "SubnetA": {
+      "Description": "The first subnet in which Jenkins should run.",
       "Type": "String"
     },
-    "AvailabilityZone2": {
-      "Description": "The second AZ in which Jenkins should run.",
+    "SubnetB": {
+      "Description": "The second subnet in which Jenkins should run.",
       "Type": "String"
     },
     "KeyName": {
@@ -145,7 +145,7 @@
     "WebServerGroup": {
       "Type": "AWS::AutoScaling::AutoScalingGroup",
       "Properties": {
-        "AvailabilityZones": [{"Ref":"AvailabilityZone1"}, {"Ref": "AvailabilityZone2"}],
+        "VPCZoneIdentifier": [{"Ref":"SubnetA"}, {"Ref": "SubnetB"}],
         "LaunchConfigurationName": {
           "Ref": "LaunchConfig"
         },
