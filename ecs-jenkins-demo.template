@@ -410,6 +410,7 @@
 
       "Properties": {
         "KeyName": {"Ref": "KeyName"},
+        "AssociatePublicIpAddress": True,
         "ImageId": {
           "Fn::FindInMap": ["AWSRegionArch2AMI", {
             "Ref": "AWS::Region"
